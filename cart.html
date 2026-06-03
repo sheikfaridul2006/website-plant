@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - GreenNest</title>
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- --- Page Loader --- -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">GREENNEST</div>
+    </div>
+
+    <!-- --- Sticky Navigation Header --- -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                <span>GreenNest</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="wishlist.html" class="nav-link">Wishlist</a>
+                <a href="cart.html" class="nav-link active">Cart</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light and dark mode">
+                    <i class="fa-solid fa-moon" id="theme-btn-icon"></i>
+                </button>
+                
+                <!-- Wishlist Badge -->
+                <a href="wishlist.html" class="nav-icon-btn" aria-label="View Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="nav-badge" id="wishlist-count-badge">0</span>
+                </a>
+                
+                <!-- Cart Badge -->
+                <a href="cart.html" class="nav-icon-btn" aria-label="View Shopping Cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="nav-badge" id="cart-count-badge">0</span>
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <i class="fa-solid fa-bars mobile-toggle" id="menu-toggle" aria-label="Open mobile menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Cart Header --- -->
+    <section class="shop-hero">
+        <div class="container">
+            <h1>Shopping Cart</h1>
+            <p style="color: var(--text-muted);">Manage your chosen green friends and prepare them for shipping</p>
+        </div>
+    </section>
+
+    <!-- --- Cart Content Grid --- -->
+    <section class="section-padding" style="background-color: var(--bg-base);">
+        <div class="container">
+            <div class="cart-grid-layout">
+                <!-- Left: Cart Items List -->
+                <main class="cart-items-table" id="cart-items-list">
+                    <!-- Dynamically Populated by script.js -->
+                </main>
+                
+                <!-- Right: Order Summary Sidebar -->
+                <aside class="order-summary-card glass-card">
+                    <h3 class="summary-title">Order Summary</h3>
+                    
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="summary-subtotal">$0.00</span>
+                    </div>
+                    
+                    <!-- Coupon Discount Row (hidden by default unless valid promo applied) -->
+                    <div class="summary-row discount" id="summary-discount-row" style="display: none;">
+                        <span>Promo Discount</span>
+                        <span id="summary-discount-val">-$0.00</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Shipping Cost</span>
+                        <span id="summary-shipping">$10.00</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Estimated Tax (8%)</span>
+                        <span id="summary-tax">$0.00</span>
+                    </div>
+                    
+                    <div class="summary-divider"></div>
+                    
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span id="summary-total">$0.00</span>
+                    </div>
+                    
+                    <!-- Promo Code Box -->
+                    <div class="coupon-box">
+                        <input type="text" id="coupon-code" placeholder="PROMO CODE" aria-label="Discount promo code input">
+                        <button class="btn btn-secondary" id="btn-apply-coupon" style="padding: 10px 18px;">Apply</button>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 20px; text-align: center;">Try codes: <strong>NESTGROW15</strong> or <strong>GREENSPRING</strong></p>
+                    
+                    <button class="btn btn-primary btn-checkout" id="btn-proceed-checkout">
+                        Proceed to Checkout <i class="fa-solid fa-credit-card"></i>
+                    </button>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Checkout Success Modal --- -->
+    <div class="modal-overlay" id="checkout-success-modal">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark modal-close-btn" id="modal-close"></i>
+            <div class="modal-success-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3>Thank You for Your Order!</h3>
+            <p>Your order has been received and is currently being processed by our gardeners. We've sent a detailed confirmation email with care tips and carrier tracking information.</p>
+            <button class="btn btn-primary" id="modal-btn-close" style="width: 100%; justify-content: center;">
+                Continue Shopping 🌱
+            </button>
+        </div>
+    </div>
+
+    <!-- --- Footer --- -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>GreenNest</span>
+                </a>
+                <p>Creating sustainable green spaces in modern urban homes, providing premium plants and accessories with care guides to foster growth.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="shop.html?cat=indoor">Indoor Plants</a></li>
+                    <li><a href="shop.html?cat=outdoor">Outdoor Plants</a></li>
+                    <li><a href="shop.html?cat=succulent">Succulents</a></li>
+                    <li><a href="shop.html?cat=bonsai">Bonsai Trees</a></li>
+                    <li><a href="shop.html?cat=air-purifying">Air Purifying</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="footer-contact-info">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>128 Foliage Drive, Greenhouses, Portland, OR</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+1 (555) 234-5678</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>support@greennest.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>&copy; 2026 GreenNest Boutique. All rights reserved.</p>
+            <p>Designed with 🌱 for premium plant parents.</p>
+        </div>
+    </footer>
+
+    <!-- --- Scroll to Top --- -->
+    <div class="scroll-top-btn" id="scroll-top" aria-label="Scroll back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

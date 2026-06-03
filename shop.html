@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Plants - GreenNest</title>
+    <meta name="description" content="Browse our catalog of 20+ premium plant varieties at GreenNest. Filter by indoor/outdoor, succulents, bonsai, and find your next botanical addition.">
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- --- Page Loader --- -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">GREENNEST</div>
+    </div>
+
+    <!-- --- Sticky Navigation Header --- -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                <span>GreenNest</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link active">Shop</a>
+                <a href="wishlist.html" class="nav-link">Wishlist</a>
+                <a href="cart.html" class="nav-link">Cart</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light and dark mode">
+                    <i class="fa-solid fa-moon" id="theme-btn-icon"></i>
+                </button>
+                
+                <!-- Wishlist Badge -->
+                <a href="wishlist.html" class="nav-icon-btn" aria-label="View Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="nav-badge" id="wishlist-count-badge">0</span>
+                </a>
+                
+                <!-- Cart Badge -->
+                <a href="cart.html" class="nav-icon-btn" aria-label="View Shopping Cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="nav-badge" id="cart-count-badge">0</span>
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <i class="fa-solid fa-bars mobile-toggle" id="menu-toggle" aria-label="Open mobile menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Shop Hero --- -->
+    <section class="shop-hero">
+        <div class="container">
+            <h1>Our Plant Catalog</h1>
+            <p style="color: var(--text-muted);">Browse our healthy collection of nursery plants shipped directly to your nest</p>
+        </div>
+    </section>
+
+    <!-- --- Shop Content --- -->
+    <section class="section-padding" style="background-color: var(--bg-base);">
+        <div class="container">
+            
+            <!-- Mobile Filter Toggle Bar -->
+            <div class="shop-ctrl-header">
+                <div class="shop-results-count">
+                    Showing <span id="total-results-count">20</span> products
+                </div>
+                
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <!-- Mobile Filter Button (visible only on mobile/tablet) -->
+                    <button class="btn btn-secondary mobile-filter-btn" id="mobile-filter-toggle" style="display: none; padding: 10px 20px;">
+                        <i class="fa-solid fa-sliders"></i> Filters
+                    </button>
+                    
+                    <!-- Sort selection -->
+                    <div class="sort-dropdown">
+                        <select id="sort-select" aria-label="Sort products by">
+                            <option value="featured">Sort by: Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Average Rating</option>
+                            <option value="alphabetical">Name: A to Z</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="shop-content">
+                <!-- Sidebar Filters (Collapsible on mobile) -->
+                <aside class="filter-sidebar glass-card" id="filter-sidebar">
+                    <!-- Close button for mobile filters -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;" class="mobile-toggle">
+                        <h3 style="font-size: 1.2rem;">Filters</h3>
+                        <i class="fa-solid fa-xmark" id="mobile-filter-close" style="cursor: pointer; font-size: 1.4rem;"></i>
+                    </div>
+                    
+                    <!-- Search Group -->
+                    <div class="filter-group">
+                        <h3 class="filter-title">Search Plants</h3>
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="shop-search" placeholder="Type plant name..." aria-label="Search plant products">
+                        </div>
+                    </div>
+                    
+                    <!-- Categories Group -->
+                    <div class="filter-group">
+                        <h3 class="filter-title">Category</h3>
+                        <div class="category-filter-list">
+                            <div class="filter-checkbox-label active" data-category="All">
+                                <span>All Categories</span>
+                                <span class="count">20</span>
+                            </div>
+                            <div class="filter-checkbox-label" data-category="Indoor Plants">
+                                <span>Indoor Plants</span>
+                                <span class="count">5</span>
+                            </div>
+                            <div class="filter-checkbox-label" data-category="Outdoor Plants">
+                                <span>Outdoor Plants</span>
+                                <span class="count">3</span>
+                            </div>
+                            <div class="filter-checkbox-label" data-category="Succulents">
+                                <span>Succulents</span>
+                                <span class="count">4</span>
+                            </div>
+                            <div class="filter-checkbox-label" data-category="Bonsai">
+                                <span>Bonsai Trees</span>
+                                <span class="count">4</span>
+                            </div>
+                            <div class="filter-checkbox-label" data-category="Flowering Plants">
+                                <span>Flowering Plants</span>
+                                <span class="count">4</span>
+                            </div>
+                            <div class="filter-checkbox-label" data-category="Air Purifying Plants">
+                                <span>Air Purifying</span>
+                                <span class="count">4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Price Range Group -->
+                    <div class="filter-group">
+                        <h3 class="filter-title">Price Range</h3>
+                        <div class="price-range-container">
+                            <input type="range" class="price-slider" id="price-slider" min="10" max="150" step="5" value="150" aria-label="Filter by maximum price">
+                            <div class="price-values">
+                                <span>Min: $10</span>
+                                <span id="price-limit-val" style="font-weight: 700; color: var(--primary);">$150</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- Product grid container -->
+                <main class="product-grid" id="shop-product-grid">
+                    <!-- Dynamically Populated by script.js -->
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Mobile Sidebar Background Overlay --- -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- --- Footer --- -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>GreenNest</span>
+                </a>
+                <p>Creating sustainable green spaces in modern urban homes, providing premium plants and accessories with care guides to foster growth.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="shop.html?cat=indoor">Indoor Plants</a></li>
+                    <li><a href="shop.html?cat=outdoor">Outdoor Plants</a></li>
+                    <li><a href="shop.html?cat=succulent">Succulents</a></li>
+                    <li><a href="shop.html?cat=bonsai">Bonsai Trees</a></li>
+                    <li><a href="shop.html?cat=air-purifying">Air Purifying</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="footer-contact-info">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>128 Foliage Drive, Greenhouses, Portland, OR</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+1 (555) 234-5678</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>support@greennest.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>&copy; 2026 GreenNest Boutique. All rights reserved.</p>
+            <p>Designed with 🌱 for premium plant parents.</p>
+        </div>
+    </footer>
+
+    <!-- --- Scroll to Top --- -->
+    <div class="scroll-top-btn" id="scroll-top" aria-label="Scroll back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

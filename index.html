@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenNest - Premium Plant E-Commerce Store</title>
+    <meta name="description" content="Discover premium indoor & outdoor plants, succulents, bonsai and air purifying species at GreenNest. Enjoy direct shipping and expert plant care support.">
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- --- Page Loader --- -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">GREENNEST</div>
+    </div>
+
+    <!-- --- Sticky Navigation Header --- -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                <span>GreenNest</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="wishlist.html" class="nav-link">Wishlist</a>
+                <a href="cart.html" class="nav-link">Cart</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light and dark mode">
+                    <i class="fa-solid fa-moon" id="theme-btn-icon"></i>
+                </button>
+                
+                <!-- Wishlist Badge -->
+                <a href="wishlist.html" class="nav-icon-btn" aria-label="View Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="nav-badge" id="wishlist-count-badge">0</span>
+                </a>
+                
+                <!-- Cart Badge -->
+                <a href="cart.html" class="nav-icon-btn" aria-label="View Shopping Cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="nav-badge" id="cart-count-badge">0</span>
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <i class="fa-solid fa-bars mobile-toggle" id="menu-toggle" aria-label="Open mobile menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Hero Section --- -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <i class="fa-solid fa-certificate"></i> Premium Plant Boutique
+                </div>
+                <h1>Bring Nature's <br><span class="text-gradient">Serenity</span> Home</h1>
+                <p>Welcome to GreenNest, where we curate healthy, gorgeous plants to elevate your space. Explore our collection of hand-picked house plants, outdoor greens, and rare bonsai.</p>
+                <div class="hero-btns">
+                    <a href="shop.html" class="btn btn-primary">Shop Collection <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#featured-categories" class="btn btn-secondary">Explore Categories</a>
+                </div>
+            </div>
+            
+            <div class="hero-image-wrapper">
+                <div class="hero-blob"></div>
+                <img src="images/hero_plants.png" alt="Aesthetic arrangement of GreenNest house plants" class="hero-image">
+                
+                <!-- Floating Badges -->
+                <div class="floating-badge fb-1 glass-card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <div>
+                        <span class="title">NASA Approved</span>
+                        <span class="subtitle">Air Purifying Plants</span>
+                    </div>
+                </div>
+                
+                <div class="floating-badge fb-2 glass-card">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <div>
+                        <span class="title">Secure Shipping</span>
+                        <span class="subtitle">100% Secure Package</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Featured Categories --- -->
+    <section class="section-padding" id="featured-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explore Featured Categories</h2>
+                <p>Find the perfect plant families tailored to your light and maintenance preferences</p>
+            </div>
+            
+            <div class="categories-grid">
+                <!-- Category 1 -->
+                <div class="category-card" onclick="window.location.href='shop.html?cat=indoor'">
+                    <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&q=80&w=600" alt="Indoor Plants" class="category-img">
+                    <div class="category-overlay">
+                        <span>Lush Spaces</span>
+                        <h3>Indoor Plants</h3>
+                    </div>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="category-card" onclick="window.location.href='shop.html?cat=outdoor'">
+                    <img src="https://images.unsplash.com/photo-1528826224414-758ffb3e17b3?auto=format&fit=crop&q=80&w=600" alt="Outdoor Plants" class="category-img">
+                    <div class="category-overlay">
+                        <span>Garden Oasis</span>
+                        <h3>Outdoor Plants</h3>
+                    </div>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="category-card" onclick="window.location.href='shop.html?cat=succulent'">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=600" alt="Succulents" class="category-img">
+                    <div class="category-overlay">
+                        <span>Low Maintenance</span>
+                        <h3>Succulents</h3>
+                    </div>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="category-card" onclick="window.location.href='shop.html?cat=bonsai'">
+                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=600" alt="Bonsai Trees" class="category-img">
+                    <div class="category-overlay">
+                        <span>Living Art</span>
+                        <h3>Bonsai</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Best Selling Products --- -->
+    <section class="section-padding" style="background-color: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Best Sellers</h2>
+                <p>Highly rated and loved by plant parents around the globe</p>
+            </div>
+            
+            <div class="product-grid" id="best-sellers-grid">
+                <!-- Dynamically Populated by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Why Choose Us Section --- -->
+    <section class="section-padding why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose GreenNest</h2>
+                <p>We are dedicated to bringing high-quality flora into your home with direct care resources</p>
+            </div>
+            
+            <div class="why-grid">
+                <!-- Card 1 -->
+                <div class="why-card glass-card">
+                    <div class="why-icon"><i class="fa-solid fa-ribbon"></i></div>
+                    <h3>Superior Quality</h3>
+                    <p>Every single plant is hand-selected and nurtured by horticulturists before shipping to guarantee optimal root systems.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="why-card glass-card">
+                    <div class="why-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Lifetime Care Support</h3>
+                    <p>Receive detailed care cards and contact our experts anytime for advice on lighting, fertilization, or watering needs.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="why-card glass-card">
+                    <div class="why-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <h3>Eco-Friendly Packing</h3>
+                    <p>Our plants are shipped in customized biodegradable packaging that prevents root movement and locks in humidity.</p>
+                </div>
+            </div>
+            
+            <!-- Animated Counters -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="counter-val" data-target="15000" data-suffix="+">0+</h3>
+                    <p>Plants Shipped</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter-val" data-target="98" data-suffix="%">0%</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter-val" data-target="60" data-suffix="+">0+</h3>
+                    <p>Plant Species</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter-val" data-target="24" data-suffix="/7">0/7</h3>
+                    <p>Expert Assistance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Customer Testimonials --- -->
+    <section class="section-padding testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Loved by Plant Parents</h2>
+                <p>Read experiences from our community of green enthusiasts</p>
+            </div>
+            
+            <div class="testimonials-slider-container">
+                <!-- Prev Button -->
+                <button class="btn-icon slider-ctrl slider-ctrl-prev" id="slider-prev" aria-label="Previous Testimonial">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                
+                <div class="testimonials-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="testimonial-slide active">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" alt="Sophia Mitchell" class="testimonial-avatar">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">"GreenNest has completely changed my interior decor game! The Monstera I ordered arrived looking extremely healthy and vibrant. The care instruction card was incredibly helpful."</p>
+                        <div class="testimonial-author">
+                            <h4>Sophia Mitchell</h4>
+                            <p>Interior Designer</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="testimonial-slide">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Liam Davies" class="testimonial-avatar">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="testimonial-quote">"I was skeptical about ordering a Bonsai online, but GreenNest exceeded my expectations. The packaging kept the soil moist and the delicate branch wiring was fully intact. Truly premium."</p>
+                        <div class="testimonial-author">
+                            <h4>Liam Davies</h4>
+                            <p>Bonsai Enthusiast</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="testimonial-slide">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150" alt="Emily Rodriguez" class="testimonial-avatar">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">"My office room is quite dark, so I bought two ZZ Plants. They are thriving even under low artificial light. Fast shipping and fantastic customer support."</p>
+                        <div class="testimonial-author">
+                            <h4>Emily Rodriguez</h4>
+                            <p>Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Next Button -->
+                <button class="btn-icon slider-ctrl slider-ctrl-next" id="slider-next" aria-label="Next Testimonial">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Dots -->
+                <div class="slider-dots" id="slider-dots">
+                    <!-- Dots generated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Newsletter Section --- -->
+    <section class="section-padding newsletter-section">
+        <div class="container">
+            <div class="newsletter-card glass-card">
+                <h2>Join Our Green Community</h2>
+                <p>Subscribe to our newsletter for exclusive plant styling tips, care updates, and early access to rare plants.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required aria-label="Email address for subscription">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Footer --- -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>GreenNest</span>
+                </a>
+                <p>Creating sustainable green spaces in modern urban homes, providing premium plants and accessories with care guides to foster growth.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="shop.html?cat=indoor">Indoor Plants</a></li>
+                    <li><a href="shop.html?cat=outdoor">Outdoor Plants</a></li>
+                    <li><a href="shop.html?cat=succulent">Succulents</a></li>
+                    <li><a href="shop.html?cat=bonsai">Bonsai Trees</a></li>
+                    <li><a href="shop.html?cat=air-purifying">Air Purifying</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="footer-contact-info">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>128 Foliage Drive, Greenhouses, Portland, OR</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+1 (555) 234-5678</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>support@greennest.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>&copy; 2026 GreenNest Boutique. All rights reserved.</p>
+            <p>Designed with 🌱 for premium plant parents.</p>
+        </div>
+    </footer>
+
+    <!-- --- Scroll to Top --- -->
+    <div class="scroll-top-btn" id="scroll-top" aria-label="Scroll back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

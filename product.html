@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Details - GreenNest</title>
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- --- Page Loader --- -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">GREENNEST</div>
+    </div>
+
+    <!-- --- Sticky Navigation Header --- -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                <span>GreenNest</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="wishlist.html" class="nav-link">Wishlist</a>
+                <a href="cart.html" class="nav-link">Cart</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light and dark mode">
+                    <i class="fa-solid fa-moon" id="theme-btn-icon"></i>
+                </button>
+                
+                <!-- Wishlist Badge -->
+                <a href="wishlist.html" class="nav-icon-btn" aria-label="View Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="nav-badge" id="wishlist-count-badge">0</span>
+                </a>
+                
+                <!-- Cart Badge -->
+                <a href="cart.html" class="nav-icon-btn" aria-label="View Shopping Cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="nav-badge" id="cart-count-badge">0</span>
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <i class="fa-solid fa-bars mobile-toggle" id="menu-toggle" aria-label="Open mobile menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Breadcrumb navigation bar --- -->
+    <div style="padding-top: 100px; background-color: var(--bg-base); border-bottom: 1px solid var(--border-color);">
+        <div class="container" style="padding: 15px 24px;">
+            <a href="shop.html" style="color: var(--text-muted); font-size: 0.9rem; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-arrow-left"></i> Back to Shop Catalog
+            </a>
+        </div>
+    </div>
+
+    <!-- --- Main Product Details Container --- -->
+    <section class="section-padding" style="background-color: var(--bg-base);">
+        <div class="container" id="product-details-container">
+            <!-- Dynamically Populated by script.js -->
+        </div>
+    </section>
+
+    <!-- --- Related Products Section --- -->
+    <section class="section-padding" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header" style="text-align: left; max-width: 100%; margin-bottom: 40px;">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem;">You May Also Like</h2>
+                <p>Complete your indoor oasis with these complementary species</p>
+            </div>
+            
+            <div class="product-grid" id="related-products-grid">
+                <!-- Dynamically Populated by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Footer --- -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>GreenNest</span>
+                </a>
+                <p>Creating sustainable green spaces in modern urban homes, providing premium plants and accessories with care guides to foster growth.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="shop.html?cat=indoor">Indoor Plants</a></li>
+                    <li><a href="shop.html?cat=outdoor">Outdoor Plants</a></li>
+                    <li><a href="shop.html?cat=succulent">Succulents</a></li>
+                    <li><a href="shop.html?cat=bonsai">Bonsai Trees</a></li>
+                    <li><a href="shop.html?cat=air-purifying">Air Purifying</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="footer-contact-info">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>128 Foliage Drive, Greenhouses, Portland, OR</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+1 (555) 234-5678</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>support@greennest.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>&copy; 2026 GreenNest Boutique. All rights reserved.</p>
+            <p>Designed with 🌱 for premium plant parents.</p>
+        </div>
+    </footer>
+
+    <!-- --- Scroll to Top --- -->
+    <div class="scroll-top-btn" id="scroll-top" aria-label="Scroll back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
